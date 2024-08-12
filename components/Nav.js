@@ -27,24 +27,24 @@ export const navData = [
 ];
  import Link from 'next/link';
 
- import {useRouter} from 'next/router'
+ import { useRouter } from 'next/router';
+
 const Nav = () => {
   const router = useRouter();
   const pathname = router.pathname;
-  
+
   return (
-  <nav className=' flex flex-col  items-center xl:justify-center fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen  '>
-    <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px]  xl:max-h py-8 bg-white/10  backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full  '>
-        {navData.map((link, index) => {
-          return (
-            <a className='' key={index} href={link.path}>
-              <div>{link.icon}</div>
-            </a>
-          );
-        })}
+    <nav className="flex flex-col items-center xl:justify-center fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen">
+      <div className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:max-h py-8 bg-white/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full">
+        {navData.map((link) => (
+          <a className="" key={link.path} href={link.path}>
+            <div>{link.icon}</div>
+          </a>
+        ))}
       </div>
-  </nav>
+    </nav>
   );
 };
+
 
 export default Nav;
