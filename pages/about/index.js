@@ -28,18 +28,18 @@ const aboutData = [
       {
         title: "Web Development",
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          FaHtml5,
+          FaCss3,
+          FaJs,
+          FaReact,
+          SiNextdotjs,
+          SiFramer,
+          FaWordpress,
         ],
       },
       {
         title: "UI/UX Design",
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
       },
     ],
   },
@@ -94,7 +94,6 @@ const aboutData = [
 
 const About = () => {
   const [index, setIndex] = useState(0);
-  console.log(index);
   
   return (
     <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
@@ -184,8 +183,10 @@ const About = () => {
                 <div className="hidden md:flex">-</div>
                 <div>{item.stage}</div>
                 <div className="flex gap-x-4">
-                  {item.icons?.map((icon, iconIndex) => (
-                    <div key={iconIndex} className="text-3xl text-white">{icon}</div>
+                  {item.icons?.map((Icon, iconIndex) => (
+                    <div key={iconIndex} className="text-3xl text-white">
+                      <Icon />
+                    </div>
                   ))}
                 </div>
               </div>
